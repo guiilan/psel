@@ -2,23 +2,8 @@ const fs = require('fs')
 const file = 'Syngenta.bmp'
 const readStream = fs.createReadStream(file)
 
-let size = 0
 
-const convertBytePInt = bytes => {
-    let result = 0
-    result = result | (0xFF000000 & parseInt(byte[3])<<24)
-    result = result | (0x00FF0000 & parseInt(byte[2])<<16)
-    result = result | (0x0000FF00 & parseInt(byte[1])<<8)
-    result = result | (0x000000FF & parseInt(byte[0])<<0)
-}
 
-const strToBin = (text) => {
-    text.split('').forEach(letter => {
-        console.log(letter, letter.charCodeAt(0).toString(2))
-    });
-}
-
-strToBin('Gui')
 
 readStream.on('data', data => {
 
@@ -29,3 +14,7 @@ readStream.on('data', data => {
     size+= data.length
 })
 
+/* A mensagem escondida da foto, tratasse de um arquivo BMP, imagem comumente usada para esconder mensagem secreta
+ultilizando uma técnica antiga chamada Esteganografia, que consiste em nada mais nada menos que esconder um texto em uma imagem ou 
+até mesmo em uma música, analisei a imagem, o arquivo Hexdump e realmente não consegui achar nada, mas o que eu acredito ser é uma mensagem
+escondida usando a técnica de esteganografia. */

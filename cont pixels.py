@@ -15,15 +15,15 @@ for color in img.getdata():
 
 
 
-print(colors)
-
 # assim chegamos a conclusão que a cor procurada é rgb(96, 192, 0)
 
 # agora podemos verficar a quantidade de cada cor através do getcolors()
 
-print(img.getcolors(maxcolors=3))
+coresandnumbers = (img.getcolors(maxcolors=3))
+
+result = coresandnumbers[1][0]
 
 #verificanos que a cor rgb(96, 192, 0) se repete 298x
 
-
-
+print("A cor verde se repete ", result, " vezes!" )
+print("Seja evolução, seja Agro!")
